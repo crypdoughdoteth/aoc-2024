@@ -5,6 +5,7 @@ pub enum Direction {
 }
 
 pub fn is_safe(levels: &[u32]) -> bool {
+    
     if levels[0] == levels[1] {
         return false;
     }
@@ -62,7 +63,8 @@ pub fn day2_2() -> Result<(), Box<dyn std::error::Error>> {
         acc
     });
 
-    let count = res.into_iter()
+    let count = res
+        .into_iter()
         .filter(|reading| {
             is_safe(reading)
                 || (0..reading.len())
